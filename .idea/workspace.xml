@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19415a14-cce5-4ad4-8968-9798d60a3ded" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/filters/http-exception.filter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/guards/api-key.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/interceptors/logging.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/health/health.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/health/health.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/health/health.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/health/health.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/health/health.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/dto/create-message.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/entities/chat-message.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/messages.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/messages.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/messages.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/messages.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/messages.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/dto/create-session.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/dto/update-session.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/entities/chat-session.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/sessions.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/sessions.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/sessions.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/sessions.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sessions/sessions.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="36vbVbjC91uh92dEa9dpps5Z2ee" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/zainaburifai/WebstormProjects/rag-chat-storage/src/sessions/dto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/zainaburifai/WebstormProjects/rag-chat-storage/node_modules/prettier",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/sessions/dto" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19415a14-cce5-4ad4-8968-9798d60a3ded" name="Changes" comment="" />
+      <created>1765890017148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765890017148</updated>
+      <workItem from="1765890018294" duration="14708000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
