@@ -15,6 +15,8 @@ async function bootstrap() {
   // Global prefix
   app.setGlobalPrefix('api/v1');
 
+  // app.set('trust proxy', 1);
+
   // CORS
   const corsOrigins = configService.get<string>('CORS_ORIGIN');
   app.enableCors({
@@ -46,6 +48,8 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('docs', app, document);
+
+
 
   await app.listen(port);
 }

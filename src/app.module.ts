@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { APP_GUARD } from '@nestjs/core';
+
 import {
   ThrottlerModule,
-  ThrottlerModuleOptions,
+  ThrottlerGuard,
 } from '@nestjs/throttler';
 
 import configuration from './config/configuration';
@@ -17,40 +19,47 @@ import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
-    // Load environment variables & global config
+    /* -------------------- CONFIG -------------------- */
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
     }),
 
-    // Rate Limiting
+    /* -------------------- RATE LIMITING -------------------- */
     ThrottlerModule.forRootAsync({
       inject: [ConfigService],
-      useFactory: (config: ConfigService): ThrottlerModuleOptions => ({
-        throttlers: [
-          {
-            ttl: config.get<number>('rateLimit.ttl') || 60,
-            limit: config.get<number>('rateLimit.limit') || 100,
-          },
-        ],
-      }),
+      useFactory: (config: ConfigService) => [
+        {
+          name: 'default',
+          ttl: Number(config.get('RATE_LIMIT_TTL', 60000)), // milliseconds
+          limit: Number(config.get('RATE_LIMIT_LIMIT', 100)),
+        },
+      ],
     }),
 
-    // Database
+    /* -------------------- DATABASE -------------------- */
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
         url: config.get<string>('DB_URL'),
         autoLoadEntities: true,
-        synchronize: true,
+        synchronize: true, // disable & use migrations in production
       }),
     }),
 
-    // Feature modules
+    /* -------------------- FEATURE MODULES -------------------- */
     SessionsModule,
     MessagesModule,
     HealthModule,
+  ],
+
+  providers: [
+    /* Apply throttling globally */
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
   ],
 })
 export class AppModule {}

@@ -11,7 +11,7 @@ import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { ApiTags, ApiSecurity, ApiQuery } from '@nestjs/swagger';
 import { ApiKeyGuard } from '../common/guards/api-key.guard';
-// import { Throttle } from '@nestjs/throttler';
+import { Throttle } from '@nestjs/throttler';
 
 @ApiTags('messages')
 @ApiSecurity('apiKey')
@@ -21,13 +21,13 @@ export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
   @Post()
-  // @Throttle(60, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   create(@Param('sessionId') sessionId: string, @Body() dto: CreateMessageDto) {
     return this.messagesService.create(sessionId, dto);
   }
 
   @Get()
-  // @Throttle(60, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   @ApiQuery({ name: 'page', required: false, description: 'Page number' })
   @ApiQuery({ name: 'limit', required: false, description: 'Items per page' })
   findBySession(

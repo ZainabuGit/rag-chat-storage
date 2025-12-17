@@ -14,7 +14,7 @@ import { CreateSessionDto } from './dto/create-session.dto';
 import { UpdateSessionDto } from './dto/update-session.dto';
 import { ApiTags, ApiSecurity, ApiQuery } from '@nestjs/swagger';
 import { ApiKeyGuard } from '../common/guards/api-key.guard';
-// import { Throttle } from '@nestjs/throttler';
+import { Throttle } from '@nestjs/throttler';
 
 @ApiTags('sessions')
 @ApiSecurity('apiKey')
@@ -24,13 +24,13 @@ export class SessionsController {
   constructor(private readonly sessionsService: SessionsService) {}
 
   @Post()
-  // @Throttle(20, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   create(@Body() dto: CreateSessionDto) {
     return this.sessionsService.create(dto);
   }
 
   @Get()
-  // @Throttle(50, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   @ApiQuery({ name: 'userId', required: true })
   @ApiQuery({ name: 'favorite', required: false })
   findByUser(
@@ -42,19 +42,19 @@ export class SessionsController {
   }
 
   @Get(':id')
-  // @Throttle(50, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   findOne(@Param('id') id: string) {
     return this.sessionsService.findOne(id);
   }
 
   @Patch(':id')
-  // @Throttle(20, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   update(@Param('id') id: string, @Body() dto: UpdateSessionDto) {
     return this.sessionsService.update(id, dto);
   }
 
   @Delete(':id')
-  // @Throttle(20, 60)
+  @Throttle({ default: { limit: 20, ttl: 60000 } }) // 20 req / min
   async remove(@Param('id') id: string) {
     await this.sessionsService.remove(id);
     return { success: true };
